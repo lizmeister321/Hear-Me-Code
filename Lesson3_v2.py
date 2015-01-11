@@ -30,5 +30,53 @@ with open("states.csv", "r") as states_file:
 
 ##EXERCISE: take Lesson 2, states.py and run it using file handling.
 
-for state in states:
-	print{state}.format()
+contacts = {
+'Shannon': {'phone': '202-555-1234', 'twitter': '@svt827', 'github': '@ashannonturner'},
+'Anupama': {'phone': '410-333-9876', 'twitter': '@iamtheanupama', 'github': '@apillalamarri'},
+'Lizzie': {'phone': '917-111-1111', 'twitter': '@lizmeister321', 'github': '@lizmeister321'}
+}
+
+##NESTED DICTIONARIES!
+## can now look through keys (names, in this case), values ("phone")
+
+for contact in contacts.keys():
+	print contact
+## Prints names: Anupama, Shannon
+## note that dictionaries don't have any fixed order, so output may be totally random
+##dictionaries are fast ways to find information, but may not necessarily have info where you think it is
+
+for contact in sorted(contacts.keys()):
+	print contacts[contact]['phone']
+
+## orders on KEY (name, in this case) and then returns phone #--Anupama comes first b/c of alpha order, has nothing to do with phone
+
+for info in contacts.values():
+	print info
+
+##.values() shows value for each key
+
+#EXERCISE TIME: Nested dictionary for everyone at the table
+
+contacts = {
+'Andrea': {'phone':'717-799-6492', 'email':'smashleynguyen@gmail.com',},
+'Ashley':{'phone': '425-269-3308', 'email':'ajdrea.palmiter@gmail.com',},
+'Lizzie':{'phone': '646-250-7186', 'email':'e.geiger.ellis@gmail.com',},
+'Hana':{'phone': '576-277-1309', 'email':'elhattabh@gmail.com',},
+'Lindsay':{'phone': '202-486-2671', 'email':'lindsay@lynsphotos.com',},	
+}
+
+for contact in contacts.items():
+	print contact
+
+for contact in contacts.values():
+	print contact
+
+for contact in contacts.keys():
+	print contact
+
+for contact in contacts.keys():
+	print contact.upper()
+
+for contact in sorted(contacts.keys()):
+	print """{0}'s contact information is:\n\tPhone: {1}\n\tEmail: {2}
+		""".format(contact,contacts[contact]['phone'],contacts[contact]['email'])
